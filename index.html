@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Redirect</title>
+    <script>
+        // Redirects here
+        const redirects = {
+            "example1": "https://youtube.com",
+        };
+
+        // Get the query parameter (?code=example1)
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get("code");
+
+        // Redirect if the code exists
+        if (code && redirects[code]) {
+            window.location.href = redirects[code];
+        } else {
+            document.write("Invalid or missing QR code.");
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
